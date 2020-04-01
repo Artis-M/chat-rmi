@@ -37,6 +37,7 @@ public class ViewHandler
         break;
       case "userList":
         root = loadUserListView("UserList.fxml");
+        userListController.getUserList();
         break;
     }
     currentScene.setRoot(root);

@@ -30,6 +30,9 @@ public class UserListController
   {
 
   }
+  public void getUserList(){
+    userListViewModel.getItems();
+  }
 
   private @FXML void onBack()
   {

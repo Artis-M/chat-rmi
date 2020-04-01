@@ -8,6 +8,9 @@ import model.Model;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.net.MalformedURLException;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 
 public class ChatViewModel implements PropertyChangeListener
 {
@@ -29,7 +32,7 @@ public boolean isConnected(){
 model.sendMessage(message);
   }
 
-  public void connect(){
+  public void connect() throws RemoteException, NotBoundException, MalformedURLException {
     model.connect();
   }
   public ObservableList<String> getItems()
@@ -38,9 +41,6 @@ model.sendMessage(message);
   }
   public void setUsername(String usernameString){
 model.setUsername(usernameString);
-  }
-  public void requestList(){
-    model.requestUserList();
   }
   @Override public void propertyChange(PropertyChangeEvent evt)
   {

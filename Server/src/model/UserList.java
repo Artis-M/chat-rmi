@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class UserList
+public class UserList implements Serializable
 {
     private ArrayList<String> userList;
 

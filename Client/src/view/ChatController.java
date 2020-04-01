@@ -8,6 +8,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 
+import java.net.MalformedURLException;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+
 public class ChatController
 {
   @FXML TextField inputUsername;
@@ -37,8 +41,7 @@ public class ChatController
     inputUsername.setText("");
   }
 
-  private @FXML void onConnect()
-  {
+  private @FXML void onConnect() throws RemoteException, NotBoundException, MalformedURLException {
       if(inputUsername.getText().equals(""))
       {
           inputUsername.setPromptText("Select Username");
@@ -62,8 +65,8 @@ public class ChatController
   private @FXML void onCurrentUsers()
   {
       if(chatViewModel.isConnected()){
-          chatViewModel.requestList();
           viewHandler.openView("userList");
+
       }
       else{
 errorLabel.setText("You must be connected");
