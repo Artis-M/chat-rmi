@@ -2,9 +2,6 @@ package model;
 
 import Utility.UnnamedPropertyChangeSubject;
 import mediator.ChatClient;
-import mediator.RemoteChatModel;
-
-
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.net.MalformedURLException;
@@ -32,12 +29,10 @@ public class ModelManager implements Model, UnnamedPropertyChangeSubject {
         System.out.println("Message sent to client");
         client.sendMessage(message1);
     }
-
     @Override
     public void getMessageFromServer(Message message) {
         property.firePropertyChange("NewMessageFromServer", null, message);
     }
-
     @Override
     public void setUsername(String username) {
         this.username = username;

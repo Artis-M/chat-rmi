@@ -1,4 +1,3 @@
-import mediator.ChatClientConnector;
 import mediator.ChatServer;
 import model.Model;
 import model.ModelManager;
